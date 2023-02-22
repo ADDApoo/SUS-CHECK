@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sus-Website</title>
+	<style>
+		body {
+			text-align: center;
+			font-size: 1.5em;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			margin-top: 2em;
+			font-size: 2.5em;
+		}
+
+		#button {
+			font-size: 1.2em;
+			padding: 0.8em 1.5em;
+			margin-top: 2em;
+			background-color: #008080;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+		}
+
+		#text {
+			margin-top: 1em;
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+<body>
+	<h1>Drücke den Knopf, um zu sehen, ob du Sus bist!</h1>
+	<button id="button" onclick="susCheck()">Knopf</button>
+
+	<script>
+		function susCheck() {
+			var chance = Math.random();
+			if (chance > 0.5) {
+				alert("Du bist Sus!");
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = "Du bist Sus!";
+				window.speechSynthesis.speak(msg);
+			} else {
+				alert("Du bist nicht Sus.");
+				var msg = new SpeechSynthesisUtterance();
+				msg.text = "Du bist nicht Sus.";
+				window.speechSynthesis.speak(msg);
+			}
+		}
+	</script>
+</body>
+</html>
